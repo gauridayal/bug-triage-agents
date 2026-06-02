@@ -48,7 +48,7 @@ def run_research_agent(state: dict) -> dict:
     text = re.sub(r'```(?:json)?\s*', '', response.content.strip()).strip('`').strip()
     try:
         research_result = json.loads(text)
-    except:
+    except json.JSONDecodeError :
         research_result = {"raw_response": text}
 
     print(f"\n[RESEARCH] Found approach: {research_result.get('recommended_approach', '')[:80]}...")

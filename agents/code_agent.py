@@ -42,7 +42,7 @@ def run_code_agent(state: dict) -> dict:
     text = re.sub(r'```(?:json)?\s*', '', response.content.strip()).strip('`').strip()
     try:
         code_result = json.loads(text)
-    except:
+    except json.JSONDecodeError:
         code_result = {"after_code": response.content, "raw": True}
 
     print(f"\n[CODE] Generated fix in {code_result.get('language', 'unknown')} language")
