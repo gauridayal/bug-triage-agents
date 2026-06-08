@@ -12,7 +12,7 @@ load_dotenv()
 
 # Read values from .env
 API_KEY = os.getenv("OPENAI_API_KEY", "Notrequired")
-BASE_URL = os.getenv("OPENAI_API_BASE_URL", "http://172.30.81.52:9000/v1")
+BASE_URL = os.getenv("OPENAI_API_BASE_URL")
 MODEL_NAME = os.getenv("OPENAI_MODEL", "Qwen/Qwen3-Coder-30B-A3B-Instruct")
 
 # Create the model — this connects to your office's Qwen server
